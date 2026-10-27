@@ -54,6 +54,8 @@ route -> service -> repository -> PostgreSQL driver
 | Диагностика электрической схемы | `packages/shared/src/circuit` |
 | Blink-парсер и план исполнения | `packages/shared/src/execution` |
 | LessonDefinition и состояние | `packages/shared/src/lesson` |
+| Опубликованные курсы, уроки и каталог компонентов | PostgreSQL через `apps/api` |
+| Сборка LessonDefinition из строк БД | `apps/api/src/services` |
 | API DTO и проверка payload | `packages/shared/src/contracts` |
 | HTTP-семантика | `apps/api/src/routes` |
 | Сохранение сессии | `apps/api/src/services` |
@@ -63,6 +65,8 @@ route -> service -> repository -> PostgreSQL driver
 | Визуальное поведение урока | `apps/web/src/features/lab` |
 
 Если новая функция не имеет однозначного владельца, сначала уточняется граница. Вторую реализацию в другом слое создавать нельзя.
+
+Структура данных курсов и компонентов зафиксирована в `docs/decisions/ADR-001-POSTGRES-CURRICULUM-AND-COMPONENTS.md`. PostgreSQL хранит версии и параметры, а `packages/shared` остаётся единственным владельцем интерпретации электрических правил.
 
 ## Публичные контракты
 
