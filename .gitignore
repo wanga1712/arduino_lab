@@ -1,0 +1,34 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Test artifacts
+playwright-report/
+test-results/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Logs and runtime files
+*.log
+*.pid
+
+# Database dumps and local backups
+backups/
+*.dump
+*.backup
+*.sql.gz
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
